@@ -1,11 +1,8 @@
 import { Menu, Layout } from 'antd';
-import { MenuUnfoldOutlined } from '@ant-design/icons';
 import { useState } from 'react';
-import { history } from 'umi';
 import request from 'umi-request';
 import styles from './lago.less';
 import SubMenu from 'antd/lib/menu/SubMenu';
-import html from './html.js';
 import { useEffect } from 'react';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/default.css';
@@ -18,7 +15,8 @@ function Lago() {
   const [list, setList] = useState([]);
   //具体展示某一章节
   const [courseDetail, setCourseDetail] = useState({});
-
+  //设置默认选中第几章节
+  const [selectKey, setSelectKey] = useState([]);
   //设置代码高亮 | 加载数据(DOM更新之后调用)
   useEffect(() => {
     document.querySelectorAll('pre').forEach((block) => {
@@ -30,21 +28,12 @@ function Lago() {
     });
     request.get('/api/sessionList').then(function (res) {
       setList(res.data);
-      //设置初始文章节题
-      // const title = res[0].sections[0].theme
-      console.log('list===');
-      console.log(list);
-      // setSectionDetailTitle(title)
-      //设置初始章节内容
-      // const content = res[0].sections[0].content
-      // console.log(content);
-      // setSectionDetail(content)
+      const section = res.data[0];
+      const course = section.courseList[0];
+      setCourseDetail(course);
+      setSelectKey([String(course.id)]);
     });
   }, []);
-
-  useEffect(() => {}, []);
-  // list.map(value => console.log(value))
-
   //选择章节
   function selectSection(itemId, sectionId) {
     const section = list.filter(
@@ -52,17 +41,8 @@ function Lago() {
     )[0];
     const course = section.courseList.filter((item) => item.id === itemId)[0];
     setCourseDetail(course);
-    console.log(section);
-    console.log(course);
-    console.log('点击', itemId, sectionId);
-    console.log(list);
-    // const detail = contents.filter(item =>
-    //    item.id === id
-    // )[0]
-    // console.log(detail)
-    // setCourseDetail(detail)
+    setSelectKey([String(itemId)]);
   }
-
   return (
     <Layout className={styles.page}>
       {/* 设置 trigger={null} 来隐藏默认设定。 */}
@@ -79,8 +59,8 @@ function Lago() {
           <Menu
             className={styles.menu}
             mode="inline"
-            // defaultSelectedKeys={[1]}
-            // defaultOpenKeys={courseDetail.id }
+            selectedKeys={selectKey}
+            defaultOpenKeys={['1']}
           >
             {list.map((value) => (
               <SubMenu
@@ -120,7 +100,7 @@ function Lago() {
             dangerouslySetInnerHTML={{ __html: courseDetail.content }}
           ></div>
         </Content>
-        {/* <Footer>底部</Footer> */}
+        <Footer>底部</Footer>
       </Layout>
     </Layout>
   );
