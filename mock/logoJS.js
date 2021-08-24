@@ -1,6 +1,6 @@
 export default {
   // 支持值为 Object 和 Array
-  //获取JavaScript核心原理目录
+  //获取JavaScript核心原理目录 这里面sectionid 都是从1开始 id也是从1开始只不过前面加上sectionid
   'GET /api/sessionList': {
     data: [
       {
