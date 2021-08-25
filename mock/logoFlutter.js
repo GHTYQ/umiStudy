@@ -1,5 +1,5 @@
 export default {
-  'GET /api/react/courseList': {
+  'GET /api/lago/courseList/flutter': {
     data: [
       {
         sectionName: '开篇词',

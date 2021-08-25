@@ -1,10 +1,9 @@
-import styles from './index.less';
 import { history } from 'umi';
 
 function Index() {
   function click() {
     history.push('./lagoModule');
   }
-  return <button onClick={click}>拉钩教育</button>;
+  return <button onClick={click}>拉钩教育11</button>;
 }
 export default Index;

@@ -1,11 +1,12 @@
 import { Menu, Layout } from 'antd';
 import { useState } from 'react';
 import request from 'umi-request';
-import styles from './lago.less';
 import SubMenu from 'antd/lib/menu/SubMenu';
 import { useEffect } from 'react';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/default.css';
+import styles from './lago.less';
+
 const { Header, Sider, Content, Footer } = Layout;
 const logo =
   'https://s0.lgstatic.com/i/image/M00/8D/31/CgqCHl_6zVmAceMuAADwxLL_pbM709.png';
@@ -26,8 +27,9 @@ function Lago() {
         console.log(e);
       }
     });
-    request.get('/api/sessionList').then(function (res) {
+    request.get('/api/lago/courseList/react').then(function (res) {
       setList(res.data);
+      console.log(res.data);
       const section = res.data[0];
       const course = section.courseList[0];
       setCourseDetail(course);

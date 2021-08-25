@@ -1,5 +1,5 @@
 export default {
-  'GET /api/react/courseList': {
+  'GET /api/lago/courseList/ios': {
     data: [
       {
         sectionName: '开篇词',

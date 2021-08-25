@@ -1,5 +1,5 @@
 export default {
-  'GET /api/react/courseList': {
+  'GET /api/react/courseList/123': {
     data: [
       {
         sectionName: '开篇词',
