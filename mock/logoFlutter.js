@@ -3,7 +3,7 @@ export default {
     data: [
       {
         sectionName: '开篇词',
-        sectionId: 1,
+        sectionId: 0,
         courseList: [
           {
             theme: '开篇词 | 通往大前端的一把关键钥匙 Flutter',
@@ -22,7 +22,7 @@ export default {
       },
       {
         sectionName: '第一部分：基础功能',
-        sectionId: 2,
+        sectionId: 1,
         courseList: [
           {
             theme: '01 | Flutter Dart 语法：从 JavaScript 角度学习 Dart',
@@ -76,7 +76,7 @@ export default {
       },
       {
         sectionName: '第二部分：项目实战',
-        sectionId: 3,
+        sectionId: 2,
         courseList: [
           {
             theme: '09 | 项目脚手架：一个命令构建 Flutter 项目',
@@ -148,7 +148,7 @@ export default {
       },
       {
         sectionName: '第三部分：进阶学习',
-        sectionId: 4,
+        sectionId: 3,
         courseList: [
           {
             theme: '20 | 原生通信：应用原生平台交互扩充 Flutter 基础能力',
@@ -179,7 +179,7 @@ export default {
       },
       {
         sectionName: '结束语',
-        sectionId: 5,
+        sectionId: 4,
         courseList: [
           {
             theme: '结束语 | 对技术的发展要有所远见',

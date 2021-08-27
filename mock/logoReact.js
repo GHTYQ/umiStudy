@@ -3,7 +3,7 @@ export default {
     data: [
       {
         sectionName: '开篇词',
-        sectionId: 1,
+        sectionId: 0,
         courseList: [
           {
             theme: '开篇词 | 这一次，真正吃透 React 知识链路与底层逻辑',
@@ -15,7 +15,7 @@ export default {
       },
       {
         sectionName: '模块一：系统深入学习“基础知识”',
-        sectionId: 2,
+        sectionId: 1,
         courseList: [
           {
             theme: '01 | JSX 代码是如何“摇身一变”成为 DOM 的？',
@@ -63,7 +63,7 @@ export default {
       },
       {
         sectionName: '模块二：刨根问底吃透“核心原理”',
-        sectionId: 3,
+        sectionId: 2,
         courseList: [
           {
             theme: '08 | 深入 React-Hooks 工作机制：“原则”的背后，是“原理”',
@@ -129,7 +129,7 @@ export default {
       },
       {
         sectionName: '模块三：“周边生态”帮你拓宽技术视野',
-        sectionId: 4,
+        sectionId: 3,
         courseList: [
           {
             theme: '18 | 揭秘 Redux 设计思想与工作原理（上）',
@@ -159,7 +159,7 @@ export default {
       },
       {
         sectionName: '模块四：“生产实践”通用法则',
-        sectionId: 5,
+        sectionId: 4,
         courseList: [
           {
             theme: '22 | 思路拓展：如何打造高性能的 React 应用？',
@@ -177,7 +177,7 @@ export default {
       },
       {
         sectionName: '结束语',
-        sectionId: 6,
+        sectionId: 5,
         courseList: [
           {
             theme: '结束语 | 聊聊 React 17，谈谈学习前端框架的心法',

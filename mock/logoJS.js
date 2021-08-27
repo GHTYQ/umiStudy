@@ -5,7 +5,7 @@ export default {
     data: [
       {
         sectionName: '开篇词',
-        sectionId: 1,
+        sectionId: 0,
         courseList: [
           {
             theme: '开篇词 | 打好 JS 基石，走稳前端进阶之路',
@@ -17,7 +17,7 @@ export default {
       },
       {
         sectionName: '模块一：基石篇',
-        sectionId: 2,
+        sectionId: 1,
         courseList: [
           {
             theme: '01 | 代码基本功测试（上）：JS 的数据类型你了解多少？',
@@ -60,7 +60,7 @@ export default {
       },
       {
         sectionName: '模块二：深入数组篇',
-        sectionId: 3,
+        sectionId: 2,
         courseList: [
           {
             theme: '07 | 数组原理（上）：帮你梳理眼花缭乱的数组 API',
@@ -102,7 +102,7 @@ export default {
       },
       {
         sectionName: '模块三：异步编程篇',
-        sectionId: 4,
+        sectionId: 3,
         courseList: [
           {
             theme: '13 | 异步编程（上）：JS 异步编程都有哪些方案？',
@@ -139,7 +139,7 @@ export default {
       },
       {
         sectionName: '模块四：JS 引擎篇',
-        sectionId: 5,
+        sectionId: 4,
         courseList: [
           {
             theme: '18 | 垃圾回收：释放内存，提升浏览器页面性能',
@@ -175,7 +175,7 @@ export default {
       },
       {
         sectionName: '彩蛋',
-        sectionId: 6,
+        sectionId: 5,
         courseList: [
           {
             theme: '彩蛋 1 | 如何应对大厂面试官的灵魂拷问？',
@@ -193,7 +193,7 @@ export default {
       },
       {
         sectionName: '结束语',
-        sectionId: 7,
+        sectionId: 6,
         courseList: [
           {
             theme: '结束语 | 面向未来，我们该如何提升自己？',
@@ -205,15 +205,4 @@ export default {
       },
     ],
   },
-  //获取课程内容
-  'GET /api/course': [
-    {
-      id: 11,
-      theme: '开篇词 | 打好 JS 基石，走稳前端进阶之路',
-    },
-    {
-      id: 12,
-      theme: '01 | 代码基本功测试（上）：JS 的数据类型你了解多少？',
-    },
-  ],
 };

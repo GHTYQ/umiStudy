@@ -11,7 +11,10 @@ const { Header, Sider, Content, Footer } = Layout;
 const logo =
   'https://s0.lgstatic.com/i/image/M00/8D/31/CgqCHl_6zVmAceMuAADwxLL_pbM709.png';
 
-function Lago() {
+function Lago(props) {
+  console.log('上个页面传过来的参数', props);
+  const { courseInfo } = props.location;
+
   //标题列表
   const [list, setList] = useState([]);
   //具体展示某一章节
@@ -27,7 +30,7 @@ function Lago() {
         console.log(e);
       }
     });
-    request.get('/api/lago/courseList/react').then(function (res) {
+    request.get('/api/lago/courseList/' + courseInfo.tag).then(function (res) {
       setList(res.data);
       console.log(res.data);
       const section = res.data[0];
@@ -52,17 +55,21 @@ function Lago() {
       <Sider className={styles.sider} trigger={null} collapsible width={384}>
         <div className={styles.logo}>
           <div className={styles.listHeader}>
-            <img className={styles.listTitleImg} src={logo} alt="" />
+            <img
+              className={styles.listTitleImg}
+              src={courseInfo.cover}
+              alt=""
+            />
             <div className={styles.listDes}>
-              <h1 className={styles.listTitle}>JavaScript 核心原理精讲</h1>
-              <p>若离 | 前美团前端技术专家</p>
+              <h1 className={styles.listTitle}>{courseInfo.title}</h1>
+              <p>{courseInfo.author}</p>
             </div>
           </div>
           <Menu
             className={styles.menu}
             mode="inline"
             selectedKeys={selectKey}
-            defaultOpenKeys={['1']}
+            defaultOpenKeys={['0']}
           >
             {list.map((value) => (
               <SubMenu
@@ -102,7 +109,6 @@ function Lago() {
             dangerouslySetInnerHTML={{ __html: courseDetail.content }}
           ></div>
         </Content>
-        <Footer>底部</Footer>
       </Layout>
     </Layout>
   );
