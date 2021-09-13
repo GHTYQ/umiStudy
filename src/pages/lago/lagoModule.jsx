@@ -10,7 +10,6 @@ function lagoModule() {
       courseInfo: item,
     });
   }
-
   const list = [
     {
       title: 'JavaScript 核心原理精讲',

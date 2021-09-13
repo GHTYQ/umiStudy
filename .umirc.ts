@@ -17,4 +17,12 @@ export default defineConfig({
   outputPath: './build', //umi打包路径修改，因为gh-page默认是发布build文件夹下内容，而umi默认的打包目录是dist
   // publicPath: '/lago/',
   history: { type: 'hash' },
+  //配置代理能力
+  proxy: {
+    '/api': {
+      target: 'https://api.github.com/',
+      changeOrigin: true,
+      pathRewrite: { '^/api': '' },
+    },
+  },
 });

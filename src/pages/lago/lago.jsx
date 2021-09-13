@@ -8,8 +8,6 @@ import 'highlight.js/styles/default.css';
 import styles from './lago.less';
 
 const { Header, Sider, Content, Footer } = Layout;
-const logo =
-  'https://s0.lgstatic.com/i/image/M00/8D/31/CgqCHl_6zVmAceMuAADwxLL_pbM709.png';
 
 function Lago(props) {
   console.log('上个页面传过来的参数', props);
@@ -71,6 +69,7 @@ function Lago(props) {
             selectedKeys={selectKey}
             defaultOpenKeys={['0']}
           >
+            {/* 菜单 */}
             {list.map((value) => (
               <SubMenu
                 title={<span>{value.sectionName}</span>}
@@ -90,6 +89,7 @@ function Lago(props) {
           </Menu>
         </div>
       </Sider>
+      {/* 内容 */}
       <Layout>
         <Header style={{ background: 'white' }}>
           {/* <MenuUnfoldOutlined /> */}

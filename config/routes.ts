@@ -8,4 +8,12 @@ export default [
     path: '/logo',
     component: '@/pages/lago/lago',
   },
+  {
+    path: '/lagoCourseDirectories',
+    component: '@/pages/lago/lagoCourseDirectories',
+  },
+  {
+    path: '/lagoCourseDetail',
+    component: '@/pages/lago/lagoCourseDetail',
+  },
 ];
