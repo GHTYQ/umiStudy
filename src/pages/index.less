@@ -18,12 +18,39 @@
     width: 800px;
     min-height: 100vh;
 
-    .item {
-      background: red;
-    }
     .cell {
-      background: yellow;
-      height: 100px;
+      .cell_title {
+        font-size: 20px;
+        color: black;
+        font-weight: bold;
+      }
+
+      .cell_labels {
+        display: flex;
+        flex-direction: row;
+        .cell_labels_item {
+          font-size: 12px;
+          padding: 2px 5px;
+          margin-right: 15px;
+          border-radius: 3px;
+        }
+      }
+
+      .cell_desc {
+        font-size: 15px;
+        letter-spacing: 2px;
+      }
+      .cell_updateTime {
+        font-size: 14px;
+        color: gray;
+      }
+      .cellLine {
+        margin-top: 20px;
+        width: 100%;
+        height: 1px;
+        align-items: center;
+        background: #f0f0f0;
+      }
     }
   }
 }

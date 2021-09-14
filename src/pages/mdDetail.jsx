@@ -1,14 +1,13 @@
-import { useState } from 'react';
-import { useEffect } from 'react';
-import request from 'umi-request';
+import { useState, useEffect } from 'react';
 import marked from 'marked';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/atom-one-dark.css';
-import styles from './lagoCourseDetail.less';
+import styles from './mdDetail.less';
+import request from 'umi-request';
 
-function LagoCourseDetail() {
-  const [data, setData] = useState('');
-
+function MdDetail(props) {
+  const [body, setBody] = useState('');
+  const { number } = props.location.query;
   /**
    * 为代码块显示添加行号
    * @param {String} code MD的代码内容
@@ -26,7 +25,13 @@ function LagoCourseDetail() {
     list.push(spanList.join(''));
     return list.join('\n');
   }
-
+  useEffect(() => {
+    request.get('/api/repos/ghtyq/tblog/issues/' + number).then(function (res) {
+      console.log('res', res);
+      setBody(res.body || []);
+    });
+  }, []);
+  // 渲染md
   marked.setOptions({
     renderer: new marked.Renderer(),
     langPrefix: 'hljs ',
@@ -42,22 +47,12 @@ function LagoCourseDetail() {
     },
   });
 
-  useEffect(() => {
-    request
-      .get('/api/repos/ghtyq/tblog/issues?labels=开篇词')
-      .then(function (res) {
-        '';
-        setData(res[0].body || []);
-        // console.log(res[0].body);
-      });
-  }, []);
-  console.log('data', data);
   return (
     <div
       className={styles.content}
-      dangerouslySetInnerHTML={{ __html: marked(data) }}
+      dangerouslySetInnerHTML={{ __html: marked(body) }}
     ></div>
     // <div>sha</div>
   );
 }
-export default LagoCourseDetail;
+export default MdDetail;

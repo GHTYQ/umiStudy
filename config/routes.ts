@@ -13,7 +13,7 @@ export default [
     component: '@/pages/lago/lagoCourseDirectories',
   },
   {
-    path: '/lagoCourseDetail',
-    component: '@/pages/lago/lagoCourseDetail',
+    path: '/MdDetail',
+    component: '@/pages/MdDetail',
   },
 ];

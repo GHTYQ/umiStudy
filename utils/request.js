@@ -1,3 +1,4 @@
+//暂时没有用到
 import { extend } from 'umi-request';
 
 const request = extend({

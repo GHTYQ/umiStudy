@@ -1,5 +1,6 @@
 {
   "private": true,
+  "homepage": "./",
   "scripts": {
     "start": "umi dev",
     "build": "umi build",
@@ -7,8 +8,7 @@
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
     "test": "umi-test",
     "test:coverage": "umi-test --coverage",
-    "deploy": "gh-pages -d build",
-    "homepage": "./"
+    "deploy": "gh-pages -d build"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
